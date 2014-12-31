@@ -1,5 +1,6 @@
 <?php
 add_theme_support('menus');
+add_theme_support('post-thumbnails');
 
 function register_nav_theme_menus(){
 	register_nav_menus(
