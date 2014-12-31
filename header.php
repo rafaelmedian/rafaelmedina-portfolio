@@ -7,12 +7,23 @@
     <?php wp_head(); ?>
   </head>
 
-  <body>
+  <body <?php body_class();?>>
     <header class="row no-max pad main">
   <h1><a class='current' href="<?php bloginfo('url'); ?>"><?php bloginfo('name'); ?></a></h1>
   <a href="" class="nav-toggle"><span></span>Menu</a>
   <nav>
     <h1 class="open"><a class='current' href="<?php bloginfo('url'); ?>"><?php bloginfo('name'); ?></a></h1>
+    <?php
+
+      $defaults = array(
+          'container' => false,
+          'theme_location' => 'primary-menu',
+          'menu_class' => 'no-bullet'
+        );
+
+      wp_nav_menu ($defaults);
+    ?>
+<!--
     <ul class="no-bullet">
       <li class="current parent"><a class='current' href="index.html">Portfolio</a>
         <ul class="sub-menu">
@@ -31,5 +42,6 @@
       <li><a href="about.html">About</a></li>
       <li><a href="contact.html">Contact</a></li>
     </ul>
+-->
   </nav>
 </header>
